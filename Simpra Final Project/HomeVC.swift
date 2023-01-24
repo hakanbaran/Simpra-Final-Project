@@ -24,6 +24,8 @@ class HomeVC: UIViewController {
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
+        
+        configureNavBar()
 
         
     }
@@ -31,6 +33,21 @@ class HomeVC: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
+    }
+    
+    
+    func configureNavBar() {
+        
+        title = "Home Page"
+        var image = UIImage(named: "joystick")
+        image = image?.withRenderingMode(.alwaysOriginal)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: nil)
+        
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(barButtonSystemItem: .search, target: self, action: nil),
+            UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .done, target: self, action: nil)
+        ]
+        navigationController?.navigationBar.tintColor = .lightGray
     }
 
 
