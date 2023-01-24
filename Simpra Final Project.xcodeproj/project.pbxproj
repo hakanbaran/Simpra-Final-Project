@@ -15,6 +15,8 @@
 		D46E3D84298093F8002D1E4F /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3D83298093F8002D1E4F /* HomeTableViewCell.swift */; };
 		D46E3D8629809750002D1E4F /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3D8529809750002D1E4F /* TabBar.swift */; };
 		D46E3D88298098CB002D1E4F /* GameDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3D87298098CB002D1E4F /* GameDetailsVC.swift */; };
+		D46E3D8B29809A7C002D1E4F /* FavoriteGamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3D8A29809A7C002D1E4F /* FavoriteGamesVC.swift */; };
+		D46E3D8D29809AC0002D1E4F /* FavoriteGamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3D8C29809AC0002D1E4F /* FavoriteGamesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		D46E3D83298093F8002D1E4F /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		D46E3D8529809750002D1E4F /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		D46E3D87298098CB002D1E4F /* GameDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsVC.swift; sourceTree = "<group>"; };
+		D46E3D8A29809A7C002D1E4F /* FavoriteGamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGamesVC.swift; sourceTree = "<group>"; };
+		D46E3D8C29809AC0002D1E4F /* FavoriteGamesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGamesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +67,10 @@
 				D46E3D6F29809175002D1E4F /* AppDelegate.swift */,
 				D46E3D7129809175002D1E4F /* SceneDelegate.swift */,
 				D46E3D7329809175002D1E4F /* HomeVC.swift */,
+				D46E3D8A29809A7C002D1E4F /* FavoriteGamesVC.swift */,
 				D46E3D87298098CB002D1E4F /* GameDetailsVC.swift */,
 				D46E3D83298093F8002D1E4F /* HomeTableViewCell.swift */,
+				D46E3D8C29809AC0002D1E4F /* FavoriteGamesTableViewCell.swift */,
 				D46E3D7829809176002D1E4F /* Assets.xcassets */,
 				D46E3D7A29809176002D1E4F /* LaunchScreen.storyboard */,
 				D46E3D7D29809176002D1E4F /* Info.plist */,
@@ -147,7 +153,9 @@
 				D46E3D7029809175002D1E4F /* AppDelegate.swift in Sources */,
 				D46E3D84298093F8002D1E4F /* HomeTableViewCell.swift in Sources */,
 				D46E3D7229809175002D1E4F /* SceneDelegate.swift in Sources */,
+				D46E3D8B29809A7C002D1E4F /* FavoriteGamesVC.swift in Sources */,
 				D46E3D8629809750002D1E4F /* TabBar.swift in Sources */,
+				D46E3D8D29809AC0002D1E4F /* FavoriteGamesTableViewCell.swift in Sources */,
 				D46E3D88298098CB002D1E4F /* GameDetailsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
