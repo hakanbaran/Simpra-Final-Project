@@ -14,20 +14,23 @@ class TabBar: UITabBarController {
         
         let homeVC = UINavigationController(rootViewController: HomeVC())
         let favoriteGamesVC = UINavigationController(rootViewController: FavoriteGamesVC())
+        let commentVC = UINavigationController(rootViewController: CommentVC())
         
         
         
         homeVC.tabBarItem.image = UIImage(systemName: "house")
         favoriteGamesVC.tabBarItem.image = UIImage(systemName: "star.fill")
+        commentVC.tabBarItem.image = UIImage(systemName: "pencil.circle")
         
         
         
         homeVC.title = "Home"
         favoriteGamesVC.title = "Favorite Games"
+        commentVC.title = "Game Comments"
         
         
         
-        setViewControllers([homeVC, favoriteGamesVC], animated: true)
+        setViewControllers([homeVC, favoriteGamesVC, commentVC], animated: true)
         tabBar.backgroundColor = .systemBackground
         
         
