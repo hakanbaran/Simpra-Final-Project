@@ -74,10 +74,11 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         cell.layer.borderWidth = 0.2
         cell.clipsToBounds = true
         
-        
-        
-        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(GameDetailsVC(), animated: true)
     }
     
     
