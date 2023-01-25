@@ -34,6 +34,7 @@
 		D46E3DB82980BFA1002D1E4F /* CoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DB72980BFA1002D1E4F /* CoreDataExtension.swift */; };
 		D46E3DBA2980C6AC002D1E4F /* GameCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DB92980C6AC002D1E4F /* GameCommentModel.swift */; };
 		D46E3DBC2980C7B6002D1E4F /* EditCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DBB2980C7B6002D1E4F /* EditCommentVC.swift */; };
+		D46E3DBF2980CC09002D1E4F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D46E3DBE2980CC09002D1E4F /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D46E3DA32980ADB7002D1E4F /* SDWebImageMapKit in Frameworks */,
+				D46E3DBF2980CC09002D1E4F /* SnapKit in Frameworks */,
 				D46E3DB12980BB65002D1E4F /* FittedSheets in Frameworks */,
 				D46E3DA12980ADB7002D1E4F /* SDWebImage in Frameworks */,
 			);
@@ -227,6 +229,7 @@
 				D46E3DA02980ADB7002D1E4F /* SDWebImage */,
 				D46E3DA22980ADB7002D1E4F /* SDWebImageMapKit */,
 				D46E3DB02980BB65002D1E4F /* FittedSheets */,
+				D46E3DBE2980CC09002D1E4F /* SnapKit */,
 			);
 			productName = "Simpra Final Project";
 			productReference = D46E3D6C29809175002D1E4F /* Simpra Final Project.app */;
@@ -259,6 +262,7 @@
 			packageReferences = (
 				D46E3D9F2980ADB7002D1E4F /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				D46E3DAF2980BB65002D1E4F /* XCRemoteSwiftPackageReference "FittedSheets" */,
+				D46E3DBD2980CC09002D1E4F /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = D46E3D6D29809175002D1E4F /* Products */;
 			projectDirPath = "";
@@ -541,6 +545,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		D46E3DBD2980CC09002D1E4F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -558,6 +570,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D46E3DAF2980BB65002D1E4F /* XCRemoteSwiftPackageReference "FittedSheets" */;
 			productName = FittedSheets;
+		};
+		D46E3DBE2980CC09002D1E4F /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D46E3DBD2980CC09002D1E4F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 
