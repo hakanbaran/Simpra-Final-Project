@@ -33,10 +33,10 @@ class EditCommentVC: UIViewController, UITextViewDelegate {
         text.layer.cornerRadius = 8
         text.layer.masksToBounds = true
         return text
-        
     }()
     
     private let saveButton : UIButton = {
+        
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         //button.tintColor = .white
@@ -51,13 +51,11 @@ class EditCommentVC: UIViewController, UITextViewDelegate {
     
     var CommantTextView = UITextView()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         CommantTextView = UITextView(frame: CGRect(x: 20.0, y: 200.0, width: view.frame.width - 40, height: 140.0))
         configureCommentTextView()
-        
         
         view.addSubview(CommantTextView)
         view.backgroundColor = .systemBackground
@@ -65,7 +63,6 @@ class EditCommentVC: UIViewController, UITextViewDelegate {
         view.addSubview(titleLabel)
         view.addSubview(saveButton)
         configureConstraints()
-        
     }
     
     func configureCommentTextView() {
@@ -89,7 +86,6 @@ class EditCommentVC: UIViewController, UITextViewDelegate {
         if CommantTextView.text == "" || CommantTextView.text == "Enter Comment..." {
             self.alertMessage(alertTitle: "Error", alertMessage: "Enter Comment")
         }
-        
         
         DataPersistenceManager.shared.addGameComment(model: GameComment(gameName: nameText.text, gameComment: CommantTextView.text)) { result in
             switch result {
@@ -137,13 +133,11 @@ class EditCommentVC: UIViewController, UITextViewDelegate {
         }
     }
     
-    
     func alertMessage( alertTitle: String, alertMessage: String) {
         
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertController.Style.alert)
         let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
         alert.addAction(okButton)
         self.present(alert, animated: true)
-        
     }
 }

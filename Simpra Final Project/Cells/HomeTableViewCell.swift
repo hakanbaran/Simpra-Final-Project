@@ -15,7 +15,6 @@ class HomeTableViewCell: UITableViewCell {
     public let gamePosterView: UIImageView = {
        
         let imageView = UIImageView()
-        
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
@@ -27,6 +26,7 @@ class HomeTableViewCell: UITableViewCell {
     }()
     
     public let nameLabel: UILabel = {
+        
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Hakan Baran"
@@ -41,19 +41,15 @@ class HomeTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "01.10.2023"
         label.font = .systemFont(ofSize: 18, weight: .light)
-        
         return label
     }()
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -78,25 +74,19 @@ class HomeTableViewCell: UITableViewCell {
             gamePosterView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
             gamePosterView.widthAnchor.constraint(equalToConstant: 98)
         ]
-        
         let nameLabelConstraints = [
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 30),
             nameLabel.leadingAnchor.constraint(equalTo: gamePosterView.trailingAnchor,constant: 10),
             nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30)
         ]
-        
         let dateLabelConstraints = [
             dateLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 15),
             dateLabel.leadingAnchor.constraint(equalTo: gamePosterView.trailingAnchor,constant: 15),
             dateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -100)
         ]
         
-        
-        
         NSLayoutConstraint.activate(nameLabelConstraints)
         NSLayoutConstraint.activate(gamePosterConstraints)
         NSLayoutConstraint.activate(dateLabelConstraints)
-        
     }
-    
 }

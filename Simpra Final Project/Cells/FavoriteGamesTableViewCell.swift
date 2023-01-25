@@ -11,21 +11,19 @@ class FavoriteGamesTableViewCell: UITableViewCell {
     
     static let identifier = "FavoritesCell"
     
-    
     public let deleteFavoriteButton : UIButton = {
+        
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.tintColor = .yellow
         let image = UIImage(systemName: "star.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 24))
         button.setImage(image, for: .normal)
-        
         return button
     }()
     
     public let gamePosterView: UIImageView = {
        
         let imageView = UIImageView()
-        
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true

@@ -26,6 +26,7 @@ class GameDetailsVC: UIViewController {
     }()
     
     private let gameDateLabel: UILabel = {
+        
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -36,9 +37,8 @@ class GameDetailsVC: UIViewController {
     }()
     
     public let gamePosterDetailsView: UIImageView = {
-       
-        let imageView = UIImageView()
         
+        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
@@ -50,24 +50,22 @@ class GameDetailsVC: UIViewController {
     }()
     
     private let webView: WKWebView = {
+        
        let webView = WKWebView()
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.layer.cornerRadius = 10
         webView.layer.borderWidth = 0.5
         webView.layer.borderColor = UIColor.white.cgColor
         return webView
-        
     }()
     
     private let descriptionLabel : UILabel = {
         
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        
         label.font = .systemFont(ofSize: 22, weight: .bold)
         label.numberOfLines = 0
         return label
-        
     }()
     
     private let userScoreLabel : UILabel = {
@@ -79,6 +77,7 @@ class GameDetailsVC: UIViewController {
     }()
 
     private let userScoreCirle  = {
+        
         let roundView = UIView(frame: CGRectMake(310, 380, 60, 60))
         roundView.backgroundColor    = UIColor.systemBackground
         roundView.layer.cornerRadius = roundView.frame.width / 2
@@ -89,7 +88,6 @@ class GameDetailsVC: UIViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.tintColor = .white
-        
         scrollView.frame = view.bounds
         
         let views = [titleLabel, gameDateLabel, gamePosterDetailsView, webView, descriptionLabel, userScoreCirle]
@@ -97,11 +95,8 @@ class GameDetailsVC: UIViewController {
         
         userScoreCirle.addSubview(userScoreLabel)
         
-        
         configureConstraints()
         setupScrollView()
-
-        
     }
     
     func setupScrollView(){
@@ -146,7 +141,6 @@ class GameDetailsVC: UIViewController {
         let overViewLabelConsTraints = [
             gameDateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             gameDateLabel.leadingAnchor.constraint(equalTo: gamePosterDetailsView.trailingAnchor,constant: 15),
-    
         ]
         
         let descriptionLabelConstraints = [
@@ -161,18 +155,14 @@ class GameDetailsVC: UIViewController {
             make.width.height.equalTo(40)
         }
         
-        
-        
         NSLayoutConstraint.activate(webViewConstraints)
         NSLayoutConstraint.activate(gamePosterConstraints)
         NSLayoutConstraint.activate(titleLabelConstraints)
         NSLayoutConstraint.activate(overViewLabelConsTraints)
         NSLayoutConstraint.activate(descriptionLabelConstraints)
-        
     }
     
     func configure(with model: GameDetailsViewModel) {
-        
         
         view.backgroundColor = .systemBackground
         title = model.gameName
@@ -188,11 +178,9 @@ class GameDetailsVC: UIViewController {
         let gamePosterURL = URL(string: model.gamePoster)
         gamePosterDetailsView.sd_setImage(with: gamePosterURL)
         
-        
         let youtubeVideoID = model.youtubeView.id.videoId
         guard let youtubeURL = URL(string: "https://www.youtube.com/embed/\(youtubeVideoID)") else {return}
         webView.load(URLRequest(url: youtubeURL))
-        
         
         let gameID = model.id.description
         APICaller.shared.getGameDescription(with: gameID) { result in
@@ -207,24 +195,15 @@ class GameDetailsVC: UIViewController {
                 print(error.localizedDescription)
             }
         }
-        
         configureScoreLabel(with: model)
-        
-        
-        
     }
     
     private func configureScoreLabel(with model: GameDetailsViewModel) {
         let score           = Int(model.gameRating * 20)
-        
         let percentageScore = model.gameRating / 5
         userScoreLabel.text = "\(score)﹪"
-        
         configureCircleStroke(with: percentageScore)
-        
     }
-    
-    
     
     private func configureCircleStroke(with score: Double) {
         let circlePath = UIBezierPath(arcCenter: CGPoint (x: userScoreCirle.frame.width / 2, y: userScoreCirle.frame.width / 2),
@@ -241,8 +220,4 @@ class GameDetailsVC: UIViewController {
         circleShape.strokeEnd   = score
         userScoreCirle.layer.addSublayer(circleShape)
     }
-    
-
-    
-
 }
