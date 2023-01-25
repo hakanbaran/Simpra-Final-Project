@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import FittedSheets
 
 class HomeVC: UIViewController, UISearchControllerDelegate {
     
@@ -138,6 +139,8 @@ extension HomeVC: UISearchBarDelegate {
     
     
 }
+
+
 
 
 
