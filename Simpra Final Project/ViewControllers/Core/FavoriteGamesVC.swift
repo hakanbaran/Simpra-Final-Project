@@ -126,6 +126,37 @@ extension FavoriteGamesVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let gameResults = gameList?[indexPath.row]
+        
+        guard let gameTitle = gameResults?.name else {return}
+        guard let gameDate = gameResults?.released else {return}
+        guard let posterURL = gameResults?.background_image else {return}
+        
+        guard let gameRating = gameResults?.rating else {return}
+        
+        //let gameID = Int(gameResults?.id ?? 3498)
+        
+         APICaller.shared.getYoutubeMovie(with: gameTitle + "trailer") { result in
+             switch result {
+
+             case .success(let videoElement):
+                 
+                 DispatchQueue.main.async {
+                     
+                     let vc = GameDetailsVC()
+//                     vc.configure(with: GameDetailsViewModel(id: Int(gameResults?.id ?? 3498),gameName: gameTitle,  youtubeView: videoElement, gamePoster: posterURL, gameDate: gameDate))
+                     
+                     vc.configure(with: GameDetailsViewModel(id: Int(gameResults?.id ?? 3498), gameName: gameTitle, youtubeView: videoElement, gamePoster: posterURL, gameDate: gameDate, gameRating: gameRating))
+                     
+                     self.navigationController?.pushViewController(vc, animated: true)
+                 }
+             case .failure(let error):
+                 print(error.localizedDescription)
+             }
+         }
+    }
+    
     
     
     
