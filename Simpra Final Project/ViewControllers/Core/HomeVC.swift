@@ -9,6 +9,8 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    var gameList: [Game]?
+    
     
     public let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -27,10 +29,9 @@ class HomeVC: UIViewController {
         
         configureNavBar()
         
-        APICaller.shared.getGames { result in
-            
-            
-        }
+        getGamesData()
+        
+        
 
         
     }
@@ -54,6 +55,23 @@ class HomeVC: UIViewController {
         ]
         navigationController?.navigationBar.tintColor = .lightGray
     }
+    
+    
+    private func getGamesData() {
+        
+        APICaller.shared.getGames { results in
+            switch results {
+            case .success(let games):
+                self.gameList = games
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 
 
 }
@@ -61,7 +79,7 @@ class HomeVC: UIViewController {
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return gameList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
