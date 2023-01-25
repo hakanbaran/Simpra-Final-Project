@@ -68,21 +68,93 @@
 		D46E3D6E29809175002D1E4F /* Simpra Final Project */ = {
 			isa = PBXGroup;
 			children = (
-				D46E3D6F29809175002D1E4F /* AppDelegate.swift */,
-				D46E3D7129809175002D1E4F /* SceneDelegate.swift */,
-				D46E3D7329809175002D1E4F /* HomeVC.swift */,
-				D46E3D8A29809A7C002D1E4F /* FavoriteGamesVC.swift */,
-				D46E3D8E29809CA0002D1E4F /* CommentVC.swift */,
-				D46E3D87298098CB002D1E4F /* GameDetailsVC.swift */,
-				D46E3D83298093F8002D1E4F /* HomeTableViewCell.swift */,
-				D46E3D8C29809AC0002D1E4F /* FavoriteGamesTableViewCell.swift */,
-				D46E3D9029809D51002D1E4F /* CommentCell.swift */,
+				D46E3D982980AA33002D1E4F /* Web Services */,
+				D46E3D922980A9E2002D1E4F /* ViewControllers */,
+				D46E3D932980AA04002D1E4F /* Cells */,
+				D46E3D972980AA2B002D1E4F /* Views */,
+				D46E3D962980AA22002D1E4F /* ViewModels */,
+				D46E3D952980AA18002D1E4F /* Models */,
+				D46E3D942980AA13002D1E4F /* Resource */,
 				D46E3D7829809176002D1E4F /* Assets.xcassets */,
 				D46E3D7A29809176002D1E4F /* LaunchScreen.storyboard */,
 				D46E3D7D29809176002D1E4F /* Info.plist */,
-				D46E3D8529809750002D1E4F /* TabBar.swift */,
 			);
 			path = "Simpra Final Project";
+			sourceTree = "<group>";
+		};
+		D46E3D922980A9E2002D1E4F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D46E3D9A2980AACC002D1E4F /* Core */,
+				D46E3D992980AAC5002D1E4F /* General */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D46E3D932980AA04002D1E4F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D46E3D83298093F8002D1E4F /* HomeTableViewCell.swift */,
+				D46E3D8C29809AC0002D1E4F /* FavoriteGamesTableViewCell.swift */,
+				D46E3D9029809D51002D1E4F /* CommentCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D46E3D942980AA13002D1E4F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D46E3D6F29809175002D1E4F /* AppDelegate.swift */,
+				D46E3D7129809175002D1E4F /* SceneDelegate.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D46E3D952980AA18002D1E4F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D46E3D962980AA22002D1E4F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D46E3D972980AA2B002D1E4F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D46E3D8529809750002D1E4F /* TabBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D46E3D982980AA33002D1E4F /* Web Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Web Services";
+			sourceTree = "<group>";
+		};
+		D46E3D992980AAC5002D1E4F /* General */ = {
+			isa = PBXGroup;
+			children = (
+				D46E3D87298098CB002D1E4F /* GameDetailsVC.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		D46E3D9A2980AACC002D1E4F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D46E3D7329809175002D1E4F /* HomeVC.swift */,
+				D46E3D8A29809A7C002D1E4F /* FavoriteGamesVC.swift */,
+				D46E3D8E29809CA0002D1E4F /* CommentVC.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
