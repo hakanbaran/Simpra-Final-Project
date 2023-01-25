@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import SnapKit
 
 class GameDetailsVC: UIViewController {
     
@@ -155,7 +156,10 @@ class GameDetailsVC: UIViewController {
             descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 10)
         ]
         
-        
+        userScoreLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.height.equalTo(40)
+        }
         
         
         
@@ -204,8 +208,38 @@ class GameDetailsVC: UIViewController {
             }
         }
         
+        configureScoreLabel(with: model)
         
         
+        
+    }
+    
+    private func configureScoreLabel(with model: GameDetailsViewModel) {
+        let score           = Int(model.gameRating * 20)
+        
+        let percentageScore = model.gameRating / 5
+        userScoreLabel.text = "\(score)﹪"
+        
+        configureCircleStroke(with: percentageScore)
+        
+    }
+    
+    
+    
+    private func configureCircleStroke(with score: Double) {
+        let circlePath = UIBezierPath(arcCenter: CGPoint (x: userScoreCirle.frame.width / 2, y: userScoreCirle.frame.width / 2),
+                                      radius: userScoreCirle.frame.width / 2,
+                                      startAngle: CGFloat(-0.5 * Double.pi),
+                                      endAngle: CGFloat(1.5 * Double.pi),
+                                      clockwise: true)
+        let circleShape         = CAShapeLayer()
+        circleShape.path        = circlePath.cgPath
+        circleShape.strokeColor = UIColor.yellow.cgColor
+        circleShape.fillColor   = UIColor.white.withAlphaComponent(0.00001).cgColor
+        circleShape.lineWidth   = 5
+        circleShape.strokeStart = 0.0
+        circleShape.strokeEnd   = score
+        userScoreCirle.layer.addSublayer(circleShape)
     }
     
 
