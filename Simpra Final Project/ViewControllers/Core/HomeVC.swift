@@ -56,7 +56,7 @@ class HomeVC: UIViewController, UISearchControllerDelegate {
         searchBar.delegate = self
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchItemClicked)),
-            UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .done, target: self, action: nil)
+            UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .done, target: self, action: #selector(gameOrdering))
         ]
         navigationController?.navigationBar.tintColor = .lightGray
     }
@@ -96,7 +96,7 @@ extension HomeVC: UISearchBarDelegate {
 
             navigationItem.rightBarButtonItems = [
                 UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchItemClicked)),
-                UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .done, target: self, action: nil)
+                UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .done, target: self, action: #selector(gameOrdering))
             ]
         }else {
             navigationItem.rightBarButtonItems = nil
@@ -138,6 +138,32 @@ extension HomeVC: UISearchBarDelegate {
     }
     
     
+}
+
+extension HomeVC {
+    
+    //ORDERING...
+    @objc func gameOrdering() {
+        
+        let controller = OrderingListVC()
+        controller.doneBlock = { selectedOrdering in
+            APICaller.shared.gameOrdering(with: selectedOrdering) { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let game):
+                        self.gameList = game
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
+        let sheetController = SheetViewController(controller: controller, sizes: [.intrinsic])
+        self.present(sheetController, animated: true, completion: nil)
+    }
 }
 
 
