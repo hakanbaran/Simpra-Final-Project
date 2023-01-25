@@ -30,6 +30,8 @@
 		D46E3DAE2980B2B2002D1E4F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DAD2980B2B2002D1E4F /* Extensions.swift */; };
 		D46E3DB12980BB65002D1E4F /* FittedSheets in Frameworks */ = {isa = PBXBuildFile; productRef = D46E3DB02980BB65002D1E4F /* FittedSheets */; };
 		D46E3DB32980BC8A002D1E4F /* OrderingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DB22980BC8A002D1E4F /* OrderingListVC.swift */; };
+		D46E3DB62980BF0A002D1E4F /* BitirmeDenemeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DB42980BF0A002D1E4F /* BitirmeDenemeModel.xcdatamodeld */; };
+		D46E3DB82980BFA1002D1E4F /* CoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DB72980BFA1002D1E4F /* CoreDataExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		D46E3DAB2980B1FB002D1E4F /* GameDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsModel.swift; sourceTree = "<group>"; };
 		D46E3DAD2980B2B2002D1E4F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D46E3DB22980BC8A002D1E4F /* OrderingListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderingListVC.swift; sourceTree = "<group>"; };
+		D46E3DB52980BF0A002D1E4F /* BitirmeDenemeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BitirmeDenemeModel.xcdatamodel; sourceTree = "<group>"; };
+		D46E3DB72980BFA1002D1E4F /* CoreDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 				D46E3D7829809176002D1E4F /* Assets.xcassets */,
 				D46E3D7A29809176002D1E4F /* LaunchScreen.storyboard */,
 				D46E3D7D29809176002D1E4F /* Info.plist */,
+				D46E3DB42980BF0A002D1E4F /* BitirmeDenemeModel.xcdatamodeld */,
 			);
 			path = "Simpra Final Project";
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				D46E3D9B2980AB7A002D1E4F /* APICaller.swift */,
+				D46E3DB72980BFA1002D1E4F /* CoreDataExtension.swift */,
 			);
 			path = "Web Services";
 			sourceTree = "<group>";
@@ -285,8 +291,10 @@
 				D46E3DA72980AF2F002D1E4F /* GameDetailsViewModel.swift in Sources */,
 				D46E3D9E2980ABF5002D1E4F /* GameModel.swift in Sources */,
 				D46E3DA52980AF20002D1E4F /* GameViewModel.swift in Sources */,
+				D46E3DB62980BF0A002D1E4F /* BitirmeDenemeModel.xcdatamodeld in Sources */,
 				D46E3D9129809D51002D1E4F /* CommentCell.swift in Sources */,
 				D46E3D8B29809A7C002D1E4F /* FavoriteGamesVC.swift in Sources */,
+				D46E3DB82980BFA1002D1E4F /* CoreDataExtension.swift in Sources */,
 				D46E3D8629809750002D1E4F /* TabBar.swift in Sources */,
 				D46E3D9C2980AB7A002D1E4F /* APICaller.swift in Sources */,
 				D46E3DAE2980B2B2002D1E4F /* Extensions.swift in Sources */,
@@ -544,6 +552,19 @@
 			productName = FittedSheets;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		D46E3DB42980BF0A002D1E4F /* BitirmeDenemeModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D46E3DB52980BF0A002D1E4F /* BitirmeDenemeModel.xcdatamodel */,
+			);
+			currentVersion = D46E3DB52980BF0A002D1E4F /* BitirmeDenemeModel.xcdatamodel */;
+			path = BitirmeDenemeModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D46E3D6429809175002D1E4F /* Project object */;
 }

@@ -51,7 +51,7 @@ class HomeVC: UIViewController, UISearchControllerDelegate {
         title = "Home Page"
         var image = UIImage(named: "joystick")
         image = image?.withRenderingMode(.alwaysOriginal)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: nil)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(getGamesData))
         searchBar.sizeToFit()
         searchBar.delegate = self
         navigationItem.rightBarButtonItems = [
@@ -67,7 +67,7 @@ class HomeVC: UIViewController, UISearchControllerDelegate {
     }
     
     
-    private func getGamesData() {
+    @objc private func getGamesData() {
         
         APICaller.shared.getGames { results in
             switch results {
