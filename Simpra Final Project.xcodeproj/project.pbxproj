@@ -28,6 +28,7 @@
 		D46E3DA92980B052002D1E4F /* YoutubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DA82980B052002D1E4F /* YoutubeSearchResponse.swift */; };
 		D46E3DAC2980B1FB002D1E4F /* GameDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DAB2980B1FB002D1E4F /* GameDetailsModel.swift */; };
 		D46E3DAE2980B2B2002D1E4F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DAD2980B2B2002D1E4F /* Extensions.swift */; };
+		D46E3DB12980BB65002D1E4F /* FittedSheets in Frameworks */ = {isa = PBXBuildFile; productRef = D46E3DB02980BB65002D1E4F /* FittedSheets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D46E3DA32980ADB7002D1E4F /* SDWebImageMapKit in Frameworks */,
+				D46E3DB12980BB65002D1E4F /* FittedSheets in Frameworks */,
 				D46E3DA12980ADB7002D1E4F /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +211,7 @@
 			packageProductDependencies = (
 				D46E3DA02980ADB7002D1E4F /* SDWebImage */,
 				D46E3DA22980ADB7002D1E4F /* SDWebImageMapKit */,
+				D46E3DB02980BB65002D1E4F /* FittedSheets */,
 			);
 			productName = "Simpra Final Project";
 			productReference = D46E3D6C29809175002D1E4F /* Simpra Final Project.app */;
@@ -240,6 +243,7 @@
 			mainGroup = D46E3D6329809175002D1E4F;
 			packageReferences = (
 				D46E3D9F2980ADB7002D1E4F /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				D46E3DAF2980BB65002D1E4F /* XCRemoteSwiftPackageReference "FittedSheets" */,
 			);
 			productRefGroup = D46E3D6D29809175002D1E4F /* Products */;
 			projectDirPath = "";
@@ -509,6 +513,14 @@
 				kind = branch;
 			};
 		};
+		D46E3DAF2980BB65002D1E4F /* XCRemoteSwiftPackageReference "FittedSheets" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gordontucker/FittedSheets";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -521,6 +533,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D46E3D9F2980ADB7002D1E4F /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
+		};
+		D46E3DB02980BB65002D1E4F /* FittedSheets */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D46E3DAF2980BB65002D1E4F /* XCRemoteSwiftPackageReference "FittedSheets" */;
+			productName = FittedSheets;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
