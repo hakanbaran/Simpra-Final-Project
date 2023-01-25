@@ -7,12 +7,14 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class DataPersistenceManager {
     
     
     enum DatabaseError: Error {
         case failedToSavedData
+        case failedToFetchData
         
     }
     
@@ -37,6 +39,25 @@ class DataPersistenceManager {
             completion(.failure(DatabaseError.failedToSavedData))
             //print(error.localizedDescription)
         }
+    }
+    
+    func fetchingGamesFromDataBase(completion: @escaping((Result<[GameItem], Error>) -> Void)) {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request : NSFetchRequest<GameItem>
+        
+        request = GameItem.fetchRequest()
+        
+        do {
+            let games = try context.fetch(request)
+            completion(.success(games))
+        }catch {
+            completion(.failure(DatabaseError.failedToFetchData))
+            //print(error.localizedDescription)
+        }
+        
     }
     
     
