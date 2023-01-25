@@ -96,5 +96,24 @@ class DataPersistenceManager {
         }
     }
     
+    func fetchingGamesCommentsFromDataBase(completion: @escaping((Result<[GameComments], Error>) -> Void)) {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request : NSFetchRequest<GameComments>
+        
+        request = GameComments.fetchRequest()
+        
+        do {
+            let gameCommentss = try context.fetch(request)
+            completion(.success(gameCommentss))
+        }catch {
+            completion(.failure(DatabaseError.failedToFetchData))
+            //print(error.localizedDescription)
+        }
+        
+    }
+    
     
 }
