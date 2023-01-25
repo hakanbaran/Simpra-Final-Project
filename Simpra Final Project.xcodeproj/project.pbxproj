@@ -29,6 +29,7 @@
 		D46E3DAC2980B1FB002D1E4F /* GameDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DAB2980B1FB002D1E4F /* GameDetailsModel.swift */; };
 		D46E3DAE2980B2B2002D1E4F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DAD2980B2B2002D1E4F /* Extensions.swift */; };
 		D46E3DB12980BB65002D1E4F /* FittedSheets in Frameworks */ = {isa = PBXBuildFile; productRef = D46E3DB02980BB65002D1E4F /* FittedSheets */; };
+		D46E3DB32980BC8A002D1E4F /* OrderingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DB22980BC8A002D1E4F /* OrderingListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		D46E3DA82980B052002D1E4F /* YoutubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResponse.swift; sourceTree = "<group>"; };
 		D46E3DAB2980B1FB002D1E4F /* GameDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsModel.swift; sourceTree = "<group>"; };
 		D46E3DAD2980B2B2002D1E4F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D46E3DB22980BC8A002D1E4F /* OrderingListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderingListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				D46E3D87298098CB002D1E4F /* GameDetailsVC.swift */,
+				D46E3DB22980BC8A002D1E4F /* OrderingListVC.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				D46E3D7029809175002D1E4F /* AppDelegate.swift in Sources */,
 				D46E3DAC2980B1FB002D1E4F /* GameDetailsModel.swift in Sources */,
 				D46E3D84298093F8002D1E4F /* HomeTableViewCell.swift in Sources */,
+				D46E3DB32980BC8A002D1E4F /* OrderingListVC.swift in Sources */,
 				D46E3DA92980B052002D1E4F /* YoutubeSearchResponse.swift in Sources */,
 				D46E3D8F29809CA0002D1E4F /* CommentVC.swift in Sources */,
 				D46E3D7229809175002D1E4F /* SceneDelegate.swift in Sources */,

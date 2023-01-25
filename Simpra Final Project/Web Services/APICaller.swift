@@ -7,6 +7,23 @@
 
 import Foundation
 
+enum GameOrdering : Int {
+    case name
+    case released
+    case metacritic
+    
+    var stringValue: String {
+        switch self{
+        case .name:
+            return "name"
+        case .released:
+            return "released"
+        case .metacritic:
+            return "metacritic"
+        }
+    }
+}
+
 
 struct Constants{
     
