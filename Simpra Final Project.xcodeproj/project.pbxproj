@@ -23,6 +23,8 @@
 		D46E3D9E2980ABF5002D1E4F /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3D9D2980ABF5002D1E4F /* GameModel.swift */; };
 		D46E3DA12980ADB7002D1E4F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = D46E3DA02980ADB7002D1E4F /* SDWebImage */; };
 		D46E3DA32980ADB7002D1E4F /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D46E3DA22980ADB7002D1E4F /* SDWebImageMapKit */; };
+		D46E3DA52980AF20002D1E4F /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DA42980AF20002D1E4F /* GameViewModel.swift */; };
+		D46E3DA72980AF2F002D1E4F /* GameDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DA62980AF2F002D1E4F /* GameDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		D46E3D9029809D51002D1E4F /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		D46E3D9B2980AB7A002D1E4F /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		D46E3D9D2980ABF5002D1E4F /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		D46E3DA42980AF20002D1E4F /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		D46E3DA62980AF2F002D1E4F /* GameDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,8 @@
 		D46E3D962980AA22002D1E4F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				D46E3DA42980AF20002D1E4F /* GameViewModel.swift */,
+				D46E3DA62980AF2F002D1E4F /* GameDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -249,7 +255,9 @@
 				D46E3D84298093F8002D1E4F /* HomeTableViewCell.swift in Sources */,
 				D46E3D8F29809CA0002D1E4F /* CommentVC.swift in Sources */,
 				D46E3D7229809175002D1E4F /* SceneDelegate.swift in Sources */,
+				D46E3DA72980AF2F002D1E4F /* GameDetailsViewModel.swift in Sources */,
 				D46E3D9E2980ABF5002D1E4F /* GameModel.swift in Sources */,
+				D46E3DA52980AF20002D1E4F /* GameViewModel.swift in Sources */,
 				D46E3D9129809D51002D1E4F /* CommentCell.swift in Sources */,
 				D46E3D8B29809A7C002D1E4F /* FavoriteGamesVC.swift in Sources */,
 				D46E3D8629809750002D1E4F /* TabBar.swift in Sources */,

@@ -102,6 +102,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         let gameResults = gameList?[indexPath.row]
         cell.nameLabel.text = gameResults?.name
         
+        
+        
         let date = gameResults?.released
         let index = date?.firstIndex(of: "-") ?? date?.endIndex
         let year = date?[..<index!]
@@ -114,7 +116,19 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(GameDetailsVC(), animated: true)
+        
+        
+        let gameResults = gameList?[indexPath.row]
+        
+        guard let gameTitle = gameResults?.name else {return}
+        guard let gameDate = gameResults?.released else {return}
+        guard let posterURL = gameResults?.background_image else {return}
+        
+        guard let gameRating = gameResults?.rating else {return}
+        
+        
+        
+        
     }
     
     
