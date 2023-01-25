@@ -33,6 +33,7 @@
 		D46E3DB62980BF0A002D1E4F /* BitirmeDenemeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DB42980BF0A002D1E4F /* BitirmeDenemeModel.xcdatamodeld */; };
 		D46E3DB82980BFA1002D1E4F /* CoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DB72980BFA1002D1E4F /* CoreDataExtension.swift */; };
 		D46E3DBA2980C6AC002D1E4F /* GameCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DB92980C6AC002D1E4F /* GameCommentModel.swift */; };
+		D46E3DBC2980C7B6002D1E4F /* EditCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DBB2980C7B6002D1E4F /* EditCommentVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		D46E3DB52980BF0A002D1E4F /* BitirmeDenemeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BitirmeDenemeModel.xcdatamodel; sourceTree = "<group>"; };
 		D46E3DB72980BFA1002D1E4F /* CoreDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataExtension.swift; sourceTree = "<group>"; };
 		D46E3DB92980C6AC002D1E4F /* GameCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCommentModel.swift; sourceTree = "<group>"; };
+		D46E3DBB2980C7B6002D1E4F /* EditCommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommentVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			children = (
 				D46E3D87298098CB002D1E4F /* GameDetailsVC.swift */,
 				D46E3DB22980BC8A002D1E4F /* OrderingListVC.swift */,
+				D46E3DBB2980C7B6002D1E4F /* EditCommentVC.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				D46E3D9C2980AB7A002D1E4F /* APICaller.swift in Sources */,
 				D46E3DAE2980B2B2002D1E4F /* Extensions.swift in Sources */,
 				D46E3D8D29809AC0002D1E4F /* FavoriteGamesTableViewCell.swift in Sources */,
+				D46E3DBC2980C7B6002D1E4F /* EditCommentVC.swift in Sources */,
 				D46E3D88298098CB002D1E4F /* GameDetailsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

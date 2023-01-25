@@ -31,10 +31,14 @@ class CommentVC: UIViewController {
         title = "Comment Games"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .always
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus.circle"), style: .done, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus.circle"), style: .done, target: self, action: #selector(addCommentGame))
         navigationController?.navigationBar.tintColor = .lightGray
 
         
+    }
+    
+    @objc func addCommentGame() {
+        self.navigationController?.pushViewController(EditCommentVC(), animated: true)
     }
     
 
