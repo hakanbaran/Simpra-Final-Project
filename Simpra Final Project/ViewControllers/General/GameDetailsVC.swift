@@ -167,6 +167,27 @@ class GameDetailsVC: UIViewController {
         
     }
     
+    func configure(with model: GameDetailsViewModel) {
+        
+        
+        view.backgroundColor = .systemBackground
+        title = model.gameName
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationItem.backButtonTitle = "Back"
+        
+        titleLabel.text = model.gameName
+        let date = model.gameDate
+        let index = date.firstIndex(of: "-") ?? date.endIndex
+        let year = date[..<index]
+        gameDateLabel.text = "Released Date:   \(year)"
+        
+        let gamePosterURL = URL(string: model.gamePoster)
+        gamePosterDetailsView.sd_setImage(with: gamePosterURL)
+        
+        
+        
+    }
+    
 
     
 

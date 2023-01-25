@@ -126,7 +126,9 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         
         guard let gameRating = gameResults?.rating else {return}
         
-        
+        let vc = GameDetailsVC()
+        vc.configure(with: GameDetailsViewModel(id: Int(gameResults?.id ?? 3498), gameName: gameTitle, gamePoster: posterURL, gameDate: gameDate, gameRating: gameRating))
+        self.navigationController?.pushViewController(vc, animated: true)
         
         
     }
