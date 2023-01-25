@@ -185,6 +185,11 @@ class GameDetailsVC: UIViewController {
         gamePosterDetailsView.sd_setImage(with: gamePosterURL)
         
         
+        let youtubeVideoID = model.youtubeView.id.videoId
+        guard let youtubeURL = URL(string: "https://www.youtube.com/embed/\(youtubeVideoID)") else {return}
+        webView.load(URLRequest(url: youtubeURL))
+        
+        
         
     }
     

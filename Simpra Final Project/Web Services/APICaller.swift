@@ -13,6 +13,9 @@ struct Constants{
     static let baseURL = "https://api.rawg.io"
     static var pageNumber = 1
     
+    static let youtubeAPIKey = "key=AIzaSyCUNpNV46IHVZniRayXhrCiNwgc8rlfCUg"
+    static let youtubeBaseURL = "https://youtube.googleapis.com/youtube/v3/search?"
+    
     
     var APIURL = URL(string: "\(baseURL)/api/games?key=\(API_KEY)&page=\(pageNumber)")
     
@@ -41,6 +44,24 @@ class APICaller {
                     } catch {
                         completion(.failure(error))
                     }
+            }
+        }
+        task.resume()
+    }
+    
+    
+    func getYoutubeMovie(with query: String,completion: @escaping (Result<VideoElement, Error>) -> ()) {
+        guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {return}
+        guard let url = URL(string: "\(Constants.youtubeBaseURL)q=\(query)&\(Constants.youtubeAPIKey)") else {return}
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
+            guard let data = data, error == nil else {return}
+            print(url)
+            do {
+                let results = try JSONDecoder().decode(YoutubeSearchResponse.self, from: data);
+                completion(.success(results.items[0]))
+            } catch {
+                completion(.failure(error))
+                print(error.localizedDescription)
             }
         }
         task.resume()

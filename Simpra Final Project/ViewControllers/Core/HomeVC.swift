@@ -126,9 +126,25 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         
         guard let gameRating = gameResults?.rating else {return}
         
-        let vc = GameDetailsVC()
-        vc.configure(with: GameDetailsViewModel(id: Int(gameResults?.id ?? 3498), gameName: gameTitle, gamePoster: posterURL, gameDate: gameDate, gameRating: gameRating))
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        APICaller.shared.getYoutubeMovie(with: gameTitle + "trailer") { result in
+            switch result {
+
+            case .success(let videoElement):
+                
+                DispatchQueue.main.async {
+                    
+                    let vc = GameDetailsVC()
+                    vc.configure(with: GameDetailsViewModel(id: Int(gameResults?.id ?? 3498), gameName: gameTitle, youtubeView: videoElement, gamePoster: posterURL, gameDate: gameDate, gameRating: gameRating))
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        
+        
         
         
     }

@@ -12,6 +12,7 @@ struct GameDetailsViewModel {
     
     let id: Int
     let gameName: String
+    let youtubeView: VideoElement
     let gamePoster: String
     let gameDate: String
     let gameRating : Double
