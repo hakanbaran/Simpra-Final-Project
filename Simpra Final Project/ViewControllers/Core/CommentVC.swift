@@ -88,6 +88,28 @@ extension CommentVC : UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        
+        DataPersistenceManager.shared.deleteGameCommentWith(model: (gameCommentList?[indexPath.row])!) { [weak self] result in
+            switch result {
+            case .success():
+                
+                print("Game Comments deleted.!!!")
+                
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            self?.gameCommentList?.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
+        }
+        
+        
+        
+    }
+    
     
     
     
