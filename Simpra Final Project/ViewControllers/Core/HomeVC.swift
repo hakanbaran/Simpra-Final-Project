@@ -150,10 +150,55 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let defaultOffset = view.safeAreaInsets.top
         let offset = scrollView.contentOffset.y + defaultOffset
-        
+
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
-        
+
+
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.section == tableView.numberOfSections - 1 &&
+                indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+                // Notify interested parties that end has been reached
+            
+            getNextGames { resultsGame in
+                
+                switch resultsGame {
+                case .success(let games):
+                    self.gameList?.append(contentsOf: games)
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    public func getNextGames(completion: @escaping (Result <[Game], Error>)-> Void) {
+        
+        Constants.pageNumber += 1
+        
+        let APIURL = URL(string: "\(Constants.baseURL)/api/games?key=\(Constants.API_KEY)&page=\(Constants.pageNumber)")!
+
+        let task = URLSession.shared.dataTask(with: URLRequest(url: APIURL)) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+            } else if let data = data {
+                    do {
+                        let results = try JSONDecoder().decode(Response.self, from: data)
+                        completion(.success(results.results!))
+                    } catch {
+                        completion(.failure(error))
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    
     
     
     
