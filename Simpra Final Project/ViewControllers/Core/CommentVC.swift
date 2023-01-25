@@ -95,7 +95,7 @@ extension CommentVC : UITableViewDelegate, UITableViewDataSource {
             switch result {
             case .success():
                 
-                print("Game Comments deleted.!!!")
+                self?.alertMessage(alertTitle: "Deletion Successful!", alertMessage: "Favorite game deleted from the list.")
                 
                 
             case .failure(let error):
@@ -107,6 +107,15 @@ extension CommentVC : UITableViewDelegate, UITableViewDataSource {
         }
         
         
+        
+    }
+    
+    func alertMessage( alertTitle: String, alertMessage: String) {
+        
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+        alert.addAction(okButton)
+        self.present(alert, animated: true)
         
     }
     
