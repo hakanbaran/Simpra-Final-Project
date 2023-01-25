@@ -8,7 +8,9 @@
 import UIKit
 import SDWebImage
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, UISearchControllerDelegate {
+    
+    let searchBar = UISearchBar()
     
     var gameList: [Game]?
     
@@ -49,12 +51,18 @@ class HomeVC: UIViewController {
         var image = UIImage(named: "joystick")
         image = image?.withRenderingMode(.alwaysOriginal)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: nil)
-        
+        searchBar.sizeToFit()
+        searchBar.delegate = self
         navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(barButtonSystemItem: .search, target: self, action: nil),
+            UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchItemClicked)),
             UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .done, target: self, action: nil)
         ]
         navigationController?.navigationBar.tintColor = .lightGray
+    }
+    
+    @objc func searchItemClicked() {
+        search(shouldShow: true)
+        searchBar.becomeFirstResponder()
     }
     
     
@@ -76,6 +84,41 @@ class HomeVC: UIViewController {
 
 
 }
+
+extension HomeVC: UISearchBarDelegate {
+    
+    func showSearchBarButton(shouldShow: Bool ) {
+        if shouldShow {
+            var image = UIImage(named: "joystick")
+            image = image?.withRenderingMode(.alwaysOriginal)
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: nil)
+
+            navigationItem.rightBarButtonItems = [
+                UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchItemClicked)),
+                UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .done, target: self, action: nil)
+            ]
+        }else {
+            navigationItem.rightBarButtonItems = nil
+            navigationItem.leftBarButtonItem = nil
+        }
+
+    }
+    
+    func search(shouldShow: Bool) {
+        showSearchBarButton(shouldShow: !shouldShow)
+        searchBar.showsCancelButton = shouldShow
+        navigationItem.titleView = shouldShow ? searchBar : nil
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        search(shouldShow: false)
+    }
+    
+    
+}
+
+
+
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
@@ -198,11 +241,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         task.resume()
     }
     
-    
-    
-    
-    
-    
 }
+
+
 
 
