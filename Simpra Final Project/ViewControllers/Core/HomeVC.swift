@@ -114,6 +114,28 @@ extension HomeVC: UISearchBarDelegate {
         search(shouldShow: false)
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        // GET SEARCH RESULT
+        
+        guard let query = searchBar.text else {return}
+        APICaller.shared.search(with: query) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let game):
+                    //print(game)
+                    self.gameList = game
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
     
 }
 

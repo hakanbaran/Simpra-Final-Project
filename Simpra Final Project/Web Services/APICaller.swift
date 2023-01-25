@@ -50,6 +50,8 @@ class APICaller {
     }
     
     
+    
+    
     func getGameDescription(with query: String,completion: @escaping (Result <SearchResultGame, Error>)-> Void) {
         
          let gameIDURL = URL(string: "\(Constants.baseURL)/api/games/\(query)?key=\(Constants.API_KEY)&page=\(Constants.pageNumber)")
@@ -69,6 +71,27 @@ class APICaller {
          }
          task.resume()
      }
+    
+    func search(with query: String,completion: @escaping (Result<[Game], Error>) -> ()) {
+        
+        guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {return}
+        
+        guard let searchAPIURL = URL(string: "\(Constants.baseURL)/api/games?key=\(Constants.API_KEY)&page=\(Constants.pageNumber)&search=\(query)") else {return}
+        let task = URLSession.shared.dataTask(with: URLRequest.init(url: searchAPIURL)) { data, response, error in
+            guard let data = data, error == nil else {return}
+            DispatchQueue.main.async {
+                do {
+                    let results = try JSONDecoder().decode(Response.self, from: data)
+                    if let results = results.results {
+                        completion(.success(results))
+                    }
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+        }
+        task.resume()
+    }
 
     
     
