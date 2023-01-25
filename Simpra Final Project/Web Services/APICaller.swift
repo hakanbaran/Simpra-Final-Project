@@ -21,6 +21,31 @@ struct Constants{
 class APICaller {
     
     
+    static let shared = APICaller()
+    
+    
+    public func getGames(completion: @escaping (Result <[Game], Error>)-> Void) {
+        
+        let APIURL = URL(string: "\(Constants.baseURL)/api/games?key=\(Constants.API_KEY)&page=\(Constants.pageNumber)")
+        
+        guard let url = APIURL else {return}
+        
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+            } else if let data = data {
+                
+                    do {
+                        let results = try JSONDecoder().decode(Response.self, from: data)
+                        completion(.success(results.results!))
+                    } catch {
+                        completion(.failure(error))
+                    }
+            }
+        }
+        task.resume()
+    }
+    
     
     
     

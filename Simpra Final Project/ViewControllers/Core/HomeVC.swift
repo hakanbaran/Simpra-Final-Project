@@ -26,6 +26,11 @@ class HomeVC: UIViewController {
         tableView.dataSource = self
         
         configureNavBar()
+        
+        APICaller.shared.getGames { result in
+            
+            
+        }
 
         
     }
