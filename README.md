@@ -18,6 +18,7 @@ Using MVVM architecture: By pulling JSON objects from API; games are listed, It 
 - TableView
 - ScrollView
 - TabBar
+- Activity Indicator
 
 ### Using Network
 
