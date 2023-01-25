@@ -190,6 +190,21 @@ class GameDetailsVC: UIViewController {
         webView.load(URLRequest(url: youtubeURL))
         
         
+        let gameID = model.id.description
+        APICaller.shared.getGameDescription(with: gameID) { result in
+            switch result {
+            case .success(let gameResponse):
+                DispatchQueue.main.async {
+                    self.descriptionLabel.attributedText =  gameResponse.description?.htmlAsAttributed
+                    self.descriptionLabel.font = .systemFont(ofSize: 18, weight: .regular)
+                    self.descriptionLabel.textColor = .lightGray
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        
         
     }
     

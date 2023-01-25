@@ -26,6 +26,8 @@
 		D46E3DA52980AF20002D1E4F /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DA42980AF20002D1E4F /* GameViewModel.swift */; };
 		D46E3DA72980AF2F002D1E4F /* GameDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DA62980AF2F002D1E4F /* GameDetailsViewModel.swift */; };
 		D46E3DA92980B052002D1E4F /* YoutubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DA82980B052002D1E4F /* YoutubeSearchResponse.swift */; };
+		D46E3DAC2980B1FB002D1E4F /* GameDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DAB2980B1FB002D1E4F /* GameDetailsModel.swift */; };
+		D46E3DAE2980B2B2002D1E4F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DAD2980B2B2002D1E4F /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		D46E3DA42980AF20002D1E4F /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		D46E3DA62980AF2F002D1E4F /* GameDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsViewModel.swift; sourceTree = "<group>"; };
 		D46E3DA82980B052002D1E4F /* YoutubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResponse.swift; sourceTree = "<group>"; };
+		D46E3DAB2980B1FB002D1E4F /* GameDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsModel.swift; sourceTree = "<group>"; };
+		D46E3DAD2980B2B2002D1E4F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 		D46E3D6E29809175002D1E4F /* Simpra Final Project */ = {
 			isa = PBXGroup;
 			children = (
+				D46E3DAA2980B1B7002D1E4F /* Helpers */,
 				D46E3D982980AA33002D1E4F /* Web Services */,
 				D46E3D922980A9E2002D1E4F /* ViewControllers */,
 				D46E3D932980AA04002D1E4F /* Cells */,
@@ -129,6 +134,7 @@
 			children = (
 				D46E3D9D2980ABF5002D1E4F /* GameModel.swift */,
 				D46E3DA82980B052002D1E4F /* YoutubeSearchResponse.swift */,
+				D46E3DAB2980B1FB002D1E4F /* GameDetailsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -174,6 +180,14 @@
 				D46E3D8E29809CA0002D1E4F /* CommentVC.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		D46E3DAA2980B1B7002D1E4F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D46E3DAD2980B2B2002D1E4F /* Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +269,7 @@
 			files = (
 				D46E3D7429809175002D1E4F /* HomeVC.swift in Sources */,
 				D46E3D7029809175002D1E4F /* AppDelegate.swift in Sources */,
+				D46E3DAC2980B1FB002D1E4F /* GameDetailsModel.swift in Sources */,
 				D46E3D84298093F8002D1E4F /* HomeTableViewCell.swift in Sources */,
 				D46E3DA92980B052002D1E4F /* YoutubeSearchResponse.swift in Sources */,
 				D46E3D8F29809CA0002D1E4F /* CommentVC.swift in Sources */,
@@ -266,6 +281,7 @@
 				D46E3D8B29809A7C002D1E4F /* FavoriteGamesVC.swift in Sources */,
 				D46E3D8629809750002D1E4F /* TabBar.swift in Sources */,
 				D46E3D9C2980AB7A002D1E4F /* APICaller.swift in Sources */,
+				D46E3DAE2980B2B2002D1E4F /* Extensions.swift in Sources */,
 				D46E3D8D29809AC0002D1E4F /* FavoriteGamesTableViewCell.swift in Sources */,
 				D46E3D88298098CB002D1E4F /* GameDetailsVC.swift in Sources */,
 			);

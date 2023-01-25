@@ -50,6 +50,28 @@ class APICaller {
     }
     
     
+    func getGameDescription(with query: String,completion: @escaping (Result <SearchResultGame, Error>)-> Void) {
+        
+         let gameIDURL = URL(string: "\(Constants.baseURL)/api/games/\(query)?key=\(Constants.API_KEY)&page=\(Constants.pageNumber)")
+        
+         guard let gameIDURL = gameIDURL else {return}
+         let task = URLSession.shared.dataTask(with: URLRequest(url: gameIDURL)) { data, response, error in
+             if let error = error {
+                 completion(.failure(error))
+             } else if let data = data {
+                 do {
+                     let results = try JSONDecoder().decode(SearchResultGame.self, from: data)
+                     completion(.success(results))
+                 } catch {
+                     print(error.localizedDescription)
+                 }
+             }
+         }
+         task.resume()
+     }
+
+    
+    
     func getYoutubeMovie(with query: String,completion: @escaping (Result<VideoElement, Error>) -> ()) {
         guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {return}
         guard let url = URL(string: "\(Constants.youtubeBaseURL)q=\(query)&\(Constants.youtubeAPIKey)") else {return}
