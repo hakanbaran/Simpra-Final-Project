@@ -101,6 +101,31 @@ extension FavoriteGamesVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            
+            
+            DataPersistenceManager.shared.deleteGameWith(model: (gameList?[indexPath.row])!) { [weak self] result in
+                switch result {
+                case .success():
+                    
+                    print("Delete is complate!!!")
+                    
+                    
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+                self?.gameList?.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
+            }
+        default:
+            break;
+        }
+    }
+    
     
     
     
