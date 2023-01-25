@@ -32,6 +32,7 @@
 		D46E3DB32980BC8A002D1E4F /* OrderingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DB22980BC8A002D1E4F /* OrderingListVC.swift */; };
 		D46E3DB62980BF0A002D1E4F /* BitirmeDenemeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DB42980BF0A002D1E4F /* BitirmeDenemeModel.xcdatamodeld */; };
 		D46E3DB82980BFA1002D1E4F /* CoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DB72980BFA1002D1E4F /* CoreDataExtension.swift */; };
+		D46E3DBA2980C6AC002D1E4F /* GameCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46E3DB92980C6AC002D1E4F /* GameCommentModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		D46E3DB22980BC8A002D1E4F /* OrderingListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderingListVC.swift; sourceTree = "<group>"; };
 		D46E3DB52980BF0A002D1E4F /* BitirmeDenemeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BitirmeDenemeModel.xcdatamodel; sourceTree = "<group>"; };
 		D46E3DB72980BFA1002D1E4F /* CoreDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataExtension.swift; sourceTree = "<group>"; };
+		D46E3DB92980C6AC002D1E4F /* GameCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCommentModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				D46E3D9D2980ABF5002D1E4F /* GameModel.swift */,
 				D46E3DA82980B052002D1E4F /* YoutubeSearchResponse.swift */,
 				D46E3DAB2980B1FB002D1E4F /* GameDetailsModel.swift */,
+				D46E3DB92980C6AC002D1E4F /* GameCommentModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				D46E3D7229809175002D1E4F /* SceneDelegate.swift in Sources */,
 				D46E3DA72980AF2F002D1E4F /* GameDetailsViewModel.swift in Sources */,
 				D46E3D9E2980ABF5002D1E4F /* GameModel.swift in Sources */,
+				D46E3DBA2980C6AC002D1E4F /* GameCommentModel.swift in Sources */,
 				D46E3DA52980AF20002D1E4F /* GameViewModel.swift in Sources */,
 				D46E3DB62980BF0A002D1E4F /* BitirmeDenemeModel.xcdatamodeld in Sources */,
 				D46E3D9129809D51002D1E4F /* CommentCell.swift in Sources */,
