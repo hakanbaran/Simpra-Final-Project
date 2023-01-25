@@ -82,6 +82,19 @@ class HomeVC: UIViewController, UISearchControllerDelegate {
             }
         }
     }
+    
+    private func addFavoriteGameAt(indexPath: IndexPath) {
+        DataPersistenceManager.shared.saveGameWith(model: (gameList?[indexPath.row])!) { result in
+            
+            switch result {
+            case .success():
+                print("Hakan Baran")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            
+        }
+    }
 
 
 }
@@ -290,6 +303,19 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
             }
         }
         task.resume()
+    }
+    
+    func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        let config = UIContextMenuConfiguration(actionProvider:  { [weak self] _ in
+            let addFavoriteAction = UIAction(title: "Add Favorite List", state: .off) { _ in
+                
+                self?.addFavoriteGameAt(indexPath: indexPath)
+                NotificationCenter.default.post(name: NSNotification.Name("newFavoriteGame"), object: nil)
+                
+            }
+            return UIMenu(options: .displayInline ,children: [addFavoriteAction])
+        })
+        return config
     }
     
 }
