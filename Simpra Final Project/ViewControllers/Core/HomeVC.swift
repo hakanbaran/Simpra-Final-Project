@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeVC: UIViewController {
     
@@ -96,6 +97,18 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.borderWidth = 0.2
         cell.clipsToBounds = true
+        
+        
+        let gameResults = gameList?[indexPath.row]
+        cell.nameLabel.text = gameResults?.name
+        
+        let date = gameResults?.released
+        let index = date?.firstIndex(of: "-") ?? date?.endIndex
+        let year = date?[..<index!]
+        cell.dateLabel.text = "Released Date:   \(year ?? "")"
+        
+        let posterURL = URL(string: gameResults?.background_image ?? "")
+        cell.gamePosterView.sd_setImage(with: posterURL)
         
         return cell
     }
