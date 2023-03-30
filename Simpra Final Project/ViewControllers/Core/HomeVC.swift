@@ -14,9 +14,11 @@ class HomeVC: UIViewController, UISearchControllerDelegate {
     let searchBar = UISearchBar()
     var gameList: [Game]?
     
+    
     public let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.identifier)
+        table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
    
@@ -30,6 +32,7 @@ class HomeVC: UIViewController, UISearchControllerDelegate {
         
         configureNavBar()
         getGamesData()
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -51,6 +54,9 @@ class HomeVC: UIViewController, UISearchControllerDelegate {
         ]
         navigationController?.navigationBar.tintColor = .lightGray
     }
+    
+   
+    
     
     @objc func searchItemClicked() {
         search(shouldShow: true)
