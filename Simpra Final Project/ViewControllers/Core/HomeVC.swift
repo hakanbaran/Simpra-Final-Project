@@ -19,6 +19,7 @@ class HomeVC: UIViewController, UISearchControllerDelegate {
         table.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.identifier)
         return table
     }()
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
